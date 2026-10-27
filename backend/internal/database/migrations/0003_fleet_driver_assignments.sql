@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS fleet_driver_assignments (
+    fleet_id TEXT PRIMARY KEY REFERENCES fleets(id) ON DELETE CASCADE,
+    driver_id TEXT NOT NULL REFERENCES driver_profiles(id) ON DELETE CASCADE,
+    assigned_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
